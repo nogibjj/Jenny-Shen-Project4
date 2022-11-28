@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 import uvicorn
-import pandas as pd
 from mylib.logic import sector as tickersector
 from mylib.logic import financials as tickerfinancials
 
