@@ -1,5 +1,6 @@
-from mylib.logic import wiki
+from mylib.logic import sector 
 
 
-def test_wiki():
-    assert "god" in wiki()
+
+def test_sector():
+    assert "Technology" in sector()
