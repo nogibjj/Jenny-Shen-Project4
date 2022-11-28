@@ -1,21 +1,24 @@
-import wikipedia
-from textblob import TextBlob
+import yfinance as yf
+import pandas as pd
 
-def wiki(name="War Goddess", length=1):
-    """This is a wikipedia fetcher"""
+def sector(name="META"):
+    """This is a ticker sector fetcher"""
 
-    my_wiki = wikipedia.summary(name, length)
-    return my_wiki
+    my_ticker = yf.Ticker(name)
+    my_info = my_ticker.info
+    my_sector = my_info['sector']
+    return my_sector
 
-def search_wiki(name):
-    """Search Wikipedia for Names"""
+def history(name="META"):
+    """This is a ticker history data fetcher"""
 
-    results = wikipedia.search(name)
-    return results
+    my_ticker = yf.Ticker(name)
+    my_history = my_ticker.history()
+    return my_history
 
-def phrase(name):
-    """Return phrases from wikipedia"""
+def history(name="META"):
+    """This is a ticker financial data fetcher"""
 
-    page = wiki(name)
-    blob = TextBlob(page)
-    return blob.noun_phrases
+    my_ticker = yf.Ticker(name)
+    my_financials = my_ticker.get_financials()
+    return my_financials
