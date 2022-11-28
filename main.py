@@ -7,7 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "yfinance API. Call /sector or /financials or /recommendations"}
+    return {"message": "yfinance API. Call /sector or /financials"}
 
 @app.get("/sector/{name}")
 async def sector(name: str):
@@ -26,4 +26,4 @@ async def financials(name: str):
 
 
 if __name__ == '__main__':
-    uvicorn.run(app, port=8080, host='0.0.0.0')
+    uvicorn.run(app, port=8099, host='0.0.0.0')
